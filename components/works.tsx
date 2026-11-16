@@ -13,7 +13,7 @@ const projects = [
     title: "Setu AI (सेतु)",
     subtitle: "AI Health Copilot • Multimodal OCR & ABDM FHIR R4",
     tags: ["Next.js 14", "TypeScript", "Supabase", "Vision OCR", "ABDM / FHIR"],
-    image: `${basePath}/abstract-neural-network-visualization-dark-theme.jpg`,
+    image: `${basePath}/projects/project-stairway.jpg`,
     year: "2024",
     link: "https://team-bread.vercel.app",
   },
@@ -21,7 +21,7 @@ const projects = [
     title: "Bharat Monitor",
     subtitle: "Geospatial Intelligence & Real-Time Telemetry Platform",
     tags: ["Rust", "Axum", "Tokio", "FastAPI", "Next.js", "WebSockets"],
-    image: `${basePath}/futuristic-data-dashboard-dark-minimal.jpg`,
+    image: `${basePath}/projects/project-scanline.jpg`,
     year: "2024",
     link: "https://github.com/scholzisshit",
   },
@@ -29,7 +29,7 @@ const projects = [
     title: "QuantFrame Pro",
     subtitle: "Privacy-First AI Quant Interview Platform with Local LLM",
     tags: ["React", "FastAPI", "Ollama", "Python", "yfinance"],
-    image: `${basePath}/abstract-memory-storage-visualization.jpg`,
+    image: `${basePath}/projects/project-touch.jpg`,
     year: "2024",
     link: "https://github.com/scholzisshit",
   },
@@ -37,7 +37,7 @@ const projects = [
     title: "Clickbait-Peak",
     subtitle: "CTR Prediction & Ad Click Behavioral Modeling",
     tags: ["Python", "Logistic Regression", "EDA", "Scikit-learn"],
-    image: `${basePath}/sound-wave-visualization-dark-theme.jpg`,
+    image: `${basePath}/projects/project-portal.jpg`,
     year: "2024",
     link: "https://github.com/scholzisshit/clickbait-peak",
   },
@@ -45,9 +45,17 @@ const projects = [
     title: "Delhi House Predictor",
     subtitle: "ML Valuation with Quantitative Risk Analytics (VaR & CVaR)",
     tags: ["Python", "XGBoost", "Scikit-learn", "Plotly", "Streamlit"],
-    image: `${basePath}/futuristic-data-dashboard-dark-minimal.jpg`,
+    image: `${basePath}/projects/project-icarus.jpg`,
     year: "2024",
     link: "https://github.com/scholzisshit",
+  },
+  {
+    title: "Agentic AI Lab",
+    subtitle: "Autonomous Multi-Agent Software Engineering Coordination Lab",
+    tags: ["CrewAI", "Gemini", "Groq", "Multi-Agent", "Python"],
+    image: `${basePath}/projects/project-knight.jpg`,
+    year: "2024",
+    link: "https://github.com/scholzisshit/agentic-ai-engineering-lab",
   },
 ]
 
@@ -142,36 +150,34 @@ export function Works() {
           </motion.div>
         ))}
 
-        {/* Floating Image (Only on large screens with mouse) */}
+        {/* Floating Artwork Preview (Desktop mouse hover) */}
         <motion.div
-          className="hidden lg:block absolute pointer-events-none z-50 w-72 h-44 md:w-80 md:h-48 overflow-hidden rounded-lg shadow-2xl"
+          className="hidden lg:block absolute pointer-events-none z-50 w-60 h-60 md:w-72 md:h-72 overflow-hidden rounded-xl border border-white/20 shadow-[0_0_50px_rgba(37,99,235,0.35)] bg-black/80 backdrop-blur-sm"
           style={{
             x: springX,
             y: springY,
-            translateX: "-50%",
-            translateY: "-320%",
+            translateX: "40px",
+            translateY: "-50%",
           }}
           animate={{
             opacity: hoveredIndex !== null ? 1 : 0,
-            scale: hoveredIndex !== null ? 1 : 0.8,
+            scale: hoveredIndex !== null ? 1 : 0.75,
+            rotate: hoveredIndex !== null ? 2 : 0,
           }}
-          transition={{ duration: 0.2 }}
+          transition={{ duration: 0.25, ease: "easeOut" }}
         >
           {hoveredIndex !== null && (
             <motion.img
               src={projects[hoveredIndex].image}
               alt={projects[hoveredIndex].title}
               className="w-full h-full object-cover"
-              initial={{ scale: 1.2 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.4 }}
-              style={{
-                filter: "grayscale(50%) contrast(1.1)",
-              }}
+              initial={{ scale: 1.15, opacity: 0.8 }}
+              animate={{ scale: 1, opacity: 1 }}
+              transition={{ duration: 0.35 }}
             />
           )}
-          {/* Glitch overlay */}
-          <div className="absolute inset-0 bg-[#2563eb]/10 mix-blend-overlay" />
+          {/* Blue tint blend */}
+          <div className="absolute inset-0 bg-[#2563eb]/10 mix-blend-screen pointer-events-none" />
         </motion.div>
       </div>
 
