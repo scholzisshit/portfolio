@@ -3,9 +3,12 @@
 import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "framer-motion"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Works", href: "#works" },
+  { label: "Certifications", href: "/certifications" },
   { label: "Contact", href: "#contact" },
 ]
 
@@ -35,12 +38,16 @@ export function Navbar() {
 
   const scrollToSection = (href: string) => {
     setIsMenuOpen(false)
-    const element = document.querySelector(href)
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" })
-    } else {
-      window.location.href = href
+    if (href.startsWith("#")) {
+      const element = document.querySelector(href)
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" })
+        return
+      }
+      window.location.href = `${basePath}/${href}`
+      return
     }
+    window.location.href = `${basePath}${href}`
   }
 
   return (

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Image from "next/image"
+import Link from "next/link"
 
 const education = [
   {
@@ -116,6 +117,17 @@ export function AboutEducation() {
               </motion.div>
             ))}
             <div className="border-t border-white/10" />
+          </div>
+
+          {/* Link to Certifications Page */}
+          <div className="mt-8 flex justify-start sm:justify-end">
+            <Link
+              href="/certifications"
+              className="group inline-flex items-center gap-2 font-mono text-xs tracking-widest text-[#60a5fa] hover:text-white transition-colors duration-300 py-2"
+            >
+              <span>EXPLORE ALL 12 CERTIFICATIONS &amp; AWARDS</span>
+              <span className="group-hover:translate-x-1.5 transition-transform duration-300">→</span>
+            </Link>
           </div>
         </motion.div>
       </div>
