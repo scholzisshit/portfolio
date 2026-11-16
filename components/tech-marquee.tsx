@@ -3,33 +3,33 @@
 import { motion } from "framer-motion"
 
 const techItems = [
+  "PYTHON",
+  "RUST",
+  "FASTAPI",
   "NEXT.JS",
   "REACT",
   "TYPESCRIPT",
-  "PYTHON",
-  "PYTORCH",
-  "LATENCY",
-  "INTUITION",
-  "OPENAI",
-  "EMPATHY",
-  "WEBGL",
   "NODE.JS",
-  "PRECISION",
+  "SCIKIT-LEARN",
+  "XGBOOST",
+  "PANDAS",
+  "WEBSOCKETS",
+  "DOCKER",
 ]
 
 const concepts = [
-  "ARCHITECTURE",
-  "SYSTEMS",
-  "INTERFACES",
+  "DISTRIBUTED SYSTEMS",
+  "REAL-TIME ANALYTICS",
+  "MACHINE LEARNING",
+  "QUANTITATIVE FINANCE",
+  "DATA ENGINEERING",
   "ALGORITHMS",
-  "EMERGENCE",
-  "COGNITION",
-  "SYNTHESIS",
-  "VELOCITY",
-  "ENTROPY",
-  "FLUX",
-  "AXIOM",
-  "TENSOR",
+  "BACKEND SYSTEMS",
+  "ASYNC ARCHITECTURE",
+  "AZURE",
+  "PLOTLY",
+  "STREAMLIT",
+  "OLLAMA",
 ]
 
 function MarqueeRow({ items, direction = "left" }: { items: string[]; direction?: "left" | "right" }) {

@@ -7,26 +7,26 @@ import { motion, useMotionValue, useSpring } from "framer-motion"
 
 const projects = [
   {
-    title: "Neural Interface",
-    tags: ["Next.js", "OpenAI", "WebGL"],
+    title: "Bharat Monitor",
+    tags: ["Rust", "Axum", "FastAPI", "Next.js", "WebSockets"],
     image: "/abstract-neural-network-visualization-dark-theme.jpg",
     year: "2024",
   },
   {
-    title: "Quantum Dashboard",
-    tags: ["React", "D3.js", "Python"],
+    title: "QuantFrame Pro",
+    tags: ["React", "FastAPI", "Ollama", "Python", "yfinance"],
     image: "/futuristic-data-dashboard-dark-minimal.jpg",
     year: "2024",
   },
   {
-    title: "Synthetic Memory",
-    tags: ["TypeScript", "LangChain", "Vector DB"],
+    title: "Delhi House Predictor",
+    tags: ["Python", "XGBoost", "Scikit-learn", "Streamlit"],
     image: "/abstract-memory-storage-visualization.jpg",
-    year: "2023",
+    year: "2024",
   },
   {
-    title: "Echo Protocol",
-    tags: ["Rust", "WebAssembly", "Audio"],
+    title: "Healthcare Analytics",
+    tags: ["Python", "SQL", "Machine Learning", "Pandas"],
     image: "/sound-wave-visualization-dark-theme.jpg",
     year: "2023",
   },
@@ -51,7 +51,7 @@ export function Works() {
   }
 
   return (
-    <section className="relative py-32 px-8 md:px-12 md:py-24">
+    <section id="works" className="relative py-32 px-8 md:px-12 md:py-24">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -61,7 +61,7 @@ export function Works() {
         className="mb-24"
       >
         <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">04 — SELECTED WORKS</p>
-        <h2 className="font-sans text-3xl md:text-5xl font-light italic">The Distortion Gallery</h2>
+        <h2 className="font-sans text-3xl md:text-5xl font-light italic">Projects That Ship</h2>
       </motion.div>
 
       {/* Projects List */}

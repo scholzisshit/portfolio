@@ -4,11 +4,11 @@ import { useRef } from "react"
 import { motion, useScroll, useTransform, useSpring } from "framer-motion"
 
 const statements = [
-  "I build products that think alongside humans.",
-  "Design systems that adapt and evolve.",
-  "Interfaces should feel inevitable.",
-  "Every interaction is a conversation.",
-  "Code is just crystallized thought.",
+  "Backend-focused developer building scalable systems.",
+  "Real-time analytics platforms and data-driven applications.",
+  "Quantitative finance meets machine learning infrastructure.",
+  "Distributed architectures for performance-oriented engineering.",
+  "Strong focus on Data Structures, Algorithms & ML deployment.",
 ]
 
 export function About() {
@@ -22,7 +22,7 @@ export function About() {
   const smoothX = useSpring(x, { stiffness: 100, damping: 30 })
 
   return (
-    <section ref={containerRef} className="relative py-32 overflow-hidden md:py-0">
+    <section id="about" ref={containerRef} className="relative py-32 overflow-hidden md:py-0">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
@@ -31,8 +31,8 @@ export function About() {
         transition={{ duration: 0.8 }}
         className="px-8 md:px-12 mb-0 py-20"
       >
-        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">03 — PHILOSOPHY</p>
-        <h2 className="font-sans text-3xl md:text-5xl font-light italic">Stream of Consciousness</h2>
+        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">03 — ABOUT</p>
+        <h2 className="font-sans text-3xl md:text-5xl font-light italic">Backend Engineer & ML Builder</h2>
       </motion.div>
 
       {/* Horizontal Scroll Container */}
