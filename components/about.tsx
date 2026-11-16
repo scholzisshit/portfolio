@@ -22,26 +22,26 @@ export function About() {
   const smoothX = useSpring(x, { stiffness: 100, damping: 30 })
 
   return (
-    <section id="about" ref={containerRef} className="relative py-32 overflow-hidden md:py-0">
+    <section id="about" ref={containerRef} className="relative py-20 sm:py-28 md:py-32 overflow-hidden">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="px-8 md:px-12 mb-0 py-20"
+        className="px-6 sm:px-8 md:px-12 mb-8 md:mb-12"
       >
-        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">03 — ABOUT</p>
-        <h2 className="font-sans text-3xl md:text-5xl font-light italic">Backend Engineer & ML Builder</h2>
+        <p className="font-mono text-[10px] sm:text-xs tracking-[0.3em] text-muted-foreground mb-3 sm:mb-4">03 — ABOUT</p>
+        <h2 className="font-sans text-2xl sm:text-4xl md:text-5xl font-light italic leading-tight">Backend Engineer &amp; ML Builder</h2>
       </motion.div>
 
       {/* Horizontal Scroll Container */}
-      <div className="relative flex items-center overflow-hidden py-0 gap-0 h-16">
-        <motion.div style={{ x: smoothX }} className="flex gap-16 md:gap-24 px-8 md:px-12 whitespace-nowrap">
+      <div className="relative flex items-center overflow-hidden py-4 h-20 sm:h-24 md:h-32">
+        <motion.div style={{ x: smoothX }} className="flex gap-10 sm:gap-16 md:gap-24 px-6 sm:px-8 md:px-12 whitespace-nowrap">
           {statements.map((statement, index) => (
             <motion.p
               key={index}
-              className="text-4xl md:text-6xl lg:text-7xl font-sans font-light tracking-tight text-white/90"
+              className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-sans font-light tracking-tight text-white/90"
               style={{
                 WebkitTextStroke: index % 2 === 0 ? "none" : "1px rgba(255,255,255,0.3)",
                 color: index % 2 === 0 ? "inherit" : "transparent",
@@ -59,7 +59,7 @@ export function About() {
         whileInView={{ scaleX: 1 }}
         viewport={{ once: true }}
         transition={{ duration: 1.5, ease: [0.25, 0.46, 0.45, 0.94] }}
-        className="mt-16 mx-8 md:mx-12 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent origin-left"
+        className="mt-12 sm:mt-16 mx-6 sm:px-8 md:mx-12 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent origin-left"
       />
     </section>
   )

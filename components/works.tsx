@@ -53,17 +53,17 @@ export function Works() {
   }
 
   return (
-    <section id="works" className="relative py-32 px-8 md:px-12 md:py-24">
+    <section id="works" className="relative py-20 sm:py-24 md:py-28 px-6 sm:px-8 md:px-12">
       {/* Section Header */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.8 }}
-        className="mb-24"
+        className="mb-12 sm:mb-16 md:mb-24"
       >
-        <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-4">04 — SELECTED WORKS</p>
-        <h2 className="font-sans text-3xl md:text-5xl font-light italic">Projects That Ship</h2>
+        <p className="font-mono text-[10px] sm:text-xs tracking-[0.3em] text-muted-foreground mb-3 sm:mb-4">04 — SELECTED WORKS</p>
+        <h2 className="font-sans text-2xl sm:text-4xl md:text-5xl font-light italic leading-tight">Projects That Ship</h2>
       </motion.div>
 
       {/* Projects List */}
@@ -75,25 +75,24 @@ export function Works() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className="relative border-t border-white/10 py-8 md:py-12"
+            className="relative border-t border-white/10 py-6 sm:py-8 md:py-12"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <a
-              href="#"
+            <div
               data-cursor-hover
-              className="group flex flex-col md:flex-row md:items-center justify-between gap-4"
+              className="group flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4"
             >
               {/* Year */}
-              <span className="font-mono text-xs text-muted-foreground tracking-widest order-1 md:order-none">
+              <span className="font-mono text-[11px] sm:text-xs text-muted-foreground tracking-widest order-1 md:order-none">
                 {project.year}
               </span>
 
               {/* Title */}
               <motion.h3
-                className="font-sans text-4xl md:text-6xl lg:text-7xl font-light tracking-tight group-hover:text-white/70 transition-colors duration-300 flex-1"
+                className="font-sans text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight group-hover:text-white/70 transition-colors duration-300 flex-1"
                 animate={{
-                  x: hoveredIndex === index ? 20 : 0,
+                  x: hoveredIndex === index ? 12 : 0,
                 }}
                 transition={{ type: "spring", stiffness: 300, damping: 20 }}
               >
@@ -101,23 +100,23 @@ export function Works() {
               </motion.h3>
 
               {/* Tags */}
-              <div className="flex gap-2 flex-wrap order-2 md:order-none">
+              <div className="flex gap-1.5 sm:gap-2 flex-wrap order-2 md:order-none">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[10px] tracking-wider px-3 py-1 border border-white/20 rounded-full text-muted-foreground"
+                    className="font-mono text-[9px] sm:text-[10px] tracking-wider px-2.5 py-1 border border-white/20 rounded-full text-muted-foreground"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-            </a>
+            </div>
           </motion.div>
         ))}
 
-        {/* Floating Image */}
+        {/* Floating Image (Only on large screens with mouse) */}
         <motion.div
-          className="absolute pointer-events-none z-50 w-64 h-40 md:w-80 md:h-48 overflow-hidden rounded-lg"
+          className="hidden lg:block absolute pointer-events-none z-50 w-72 h-44 md:w-80 md:h-48 overflow-hidden rounded-lg shadow-2xl"
           style={{
             x: springX,
             y: springY,

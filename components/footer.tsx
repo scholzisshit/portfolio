@@ -43,10 +43,10 @@ export function Footer() {
           />
 
           {/* Content */}
-          <div className="relative py-16 md:py-24 px-8 md:px-12 border-t border-white/10">
-            <div className="flex flex-col md:flex-row items-center justify-between gap-8">
+          <div className="relative py-12 sm:py-16 md:py-24 px-6 sm:px-8 md:px-12 border-t border-white/10">
+            <div className="flex flex-col md:flex-row items-center justify-between gap-6 sm:gap-8">
               <motion.h2
-                className="font-sans text-4xl md:text-6xl lg:text-8xl font-light tracking-tight text-center md:text-left"
+                className="font-sans text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-light tracking-tight text-center md:text-left"
                 animate={{
                   color: isHovered ? "#050505" : "#fafafa",
                 }}
@@ -62,7 +62,7 @@ export function Footer() {
                 }}
                 transition={{ duration: 0.3 }}
               >
-                <ArrowUpRight className="w-12 h-12 md:w-16 md:h-16" />
+                <ArrowUpRight className="w-8 h-8 sm:w-12 sm:h-12 md:w-16 md:h-16" />
               </motion.div>
             </div>
           </div>
@@ -70,16 +70,16 @@ export function Footer() {
       </Link>
 
       {/* Footer Info */}
-      <div className="px-8 md:px-12 py-8 border-t border-white/10">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="px-6 sm:px-8 md:px-12 py-6 sm:py-8 border-t border-white/10">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
           {/* Local Time */}
-          <div className="font-mono text-xs tracking-widest text-muted-foreground">
+          <div className="font-mono text-[11px] sm:text-xs tracking-widest text-muted-foreground">
             <span className="mr-2">LOCAL TIME</span>
             <span className="text-white tabular-nums">{time}</span>
           </div>
 
           {/* Links */}
-          <div className="flex gap-8">
+          <div className="flex flex-wrap justify-center gap-6 sm:gap-8">
             {[
               { label: "LinkedIn", href: "https://linkedin.com/in/nitish-sehgal-6461a4274" },
               { label: "GitHub", href: "https://github.com/scholzisshit" },
@@ -91,7 +91,7 @@ export function Footer() {
                 target={link.href.startsWith("mailto") ? undefined : "_blank"}
                 rel="noopener noreferrer"
                 data-cursor-hover
-                className="font-mono text-xs tracking-widest text-muted-foreground hover:text-white transition-colors duration-300"
+                className="font-mono text-[11px] sm:text-xs tracking-widest text-muted-foreground hover:text-white transition-colors duration-300 py-1"
               >
                 {link.label}
               </a>
@@ -99,7 +99,7 @@ export function Footer() {
           </div>
 
           {/* Copyright */}
-          <p className="font-mono text-xs tracking-widest text-muted-foreground">© {new Date().getFullYear()}</p>
+          <p className="font-mono text-[11px] sm:text-xs tracking-widest text-muted-foreground">© {new Date().getFullYear()}</p>
         </div>
       </div>
     </footer>

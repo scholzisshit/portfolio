@@ -9,6 +9,10 @@ export function CustomCursor() {
   const [isVisible, setIsVisible] = useState(false)
 
   useEffect(() => {
+    // Only enable custom cursor on devices with a fine pointer (mouse/trackpad)
+    const hasFinePointer = window.matchMedia("(pointer: fine)").matches
+    if (!hasFinePointer) return
+
     const handleMouseMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY })
       setIsVisible(true)
@@ -50,7 +54,7 @@ export function CustomCursor() {
     <>
       {/* Main cursor dot */}
       <motion.div
-        className="fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
+        className="hidden lg:block fixed top-0 left-0 w-3 h-3 bg-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
         animate={{
           x: position.x - 6,
           y: position.y - 6,
@@ -61,7 +65,7 @@ export function CustomCursor() {
       />
       {/* Hover ring */}
       <motion.div
-        className="fixed top-0 left-0 w-12 h-12 border border-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
+        className="hidden lg:block fixed top-0 left-0 w-12 h-12 border border-white rounded-full pointer-events-none z-[10000] mix-blend-difference"
         animate={{
           x: position.x - 24,
           y: position.y - 24,

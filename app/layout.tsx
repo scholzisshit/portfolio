@@ -15,13 +15,16 @@ const geistMono = Geist_Mono({
 })
 
 export const metadata: Metadata = {
-  title: "AI-Native Product Builder | Portfolio",
-  description: "System Architect & Interface Designer crafting intelligent digital experiences",
-    generator: 'v0.app'
+  title: "Nitish Sehgal — AI / ML Developer & Systems Engineer",
+  description: "Portfolio of Nitish Sehgal: AI / ML developer building scalable real-time systems, machine learning infrastructure, and quantitative finance platforms.",
+  generator: "Next.js",
 }
 
 export const viewport: Viewport = {
-  themeColor: "#1a1a1a",
+  themeColor: "#050505",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
 }
 
 export default function RootLayout({

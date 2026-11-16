@@ -17,20 +17,20 @@ export function Hero() {
   return (
     <section ref={containerRef} className="relative h-screen w-full overflow-hidden bg-[#050505]">
       {/* 3D Sphere Background */}
-      <div className="absolute inset-0">
+      <div className="absolute inset-0 pointer-events-none">
         <SentientSphere />
       </div>
 
       {/* Typography Overlay */}
-      <motion.div style={{ opacity, scale }} className="relative z-10 h-full flex flex-col justify-between p-8 md:p-12 md:px-12 md:py-20">
+      <motion.div style={{ opacity, scale }} className="relative z-10 h-full flex flex-col justify-between px-6 pt-24 pb-12 sm:px-8 sm:pt-28 md:p-12 md:px-12 md:py-20">
         {/* Top Left */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
         >
-          <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-2">01 — DISCIPLINE</p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance">
+          <p className="font-mono text-[10px] sm:text-xs tracking-[0.3em] text-muted-foreground mb-2">01 — DISCIPLINE</p>
+          <h2 className="font-sans text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance leading-tight sm:leading-none">
             AI / ML
             <br />
             <span className="italic">DEVELOPER</span>
@@ -49,7 +49,7 @@ export function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             onClick={() => document.querySelector("#about")?.scrollIntoView({ behavior: "smooth" })}
-            className="relative px-8 py-4 border border-white/20 rounded-full font-mono text-sm tracking-widest uppercase bg-transparent backdrop-blur-sm hover:bg-white hover:text-black transition-colors duration-500"
+            className="relative px-6 py-3 sm:px-8 sm:py-4 border border-white/20 rounded-full font-mono text-xs sm:text-sm tracking-widest uppercase bg-transparent backdrop-blur-sm hover:bg-white hover:text-black transition-colors duration-500 whitespace-nowrap active:bg-white active:text-black"
           >
             Explore
             <span className="absolute -top-1 -right-1 w-2 h-2 bg-[#2563eb] rounded-full animate-pulse" />
@@ -63,8 +63,8 @@ export function Hero() {
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.46, 0.45, 0.94] }}
           className="self-end text-right"
         >
-          <p className="font-mono text-xs tracking-[0.3em] text-muted-foreground mb-2">02 — CRAFT</p>
-          <h2 className="font-sans text-4xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance">
+          <p className="font-mono text-[10px] sm:text-xs tracking-[0.3em] text-muted-foreground mb-2">02 — CRAFT</p>
+          <h2 className="font-sans text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-light tracking-tight text-balance leading-tight sm:leading-none">
             NITISH
             <br />
             <span className="italic">SEHGAL</span>
@@ -77,7 +77,7 @@ export function Hero() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10"
+        className="absolute bottom-4 sm:bottom-8 left-1/2 -translate-x-1/2 z-10 pointer-events-none"
       >
         <motion.div
           animate={{ y: [0, 8, 0] }}
