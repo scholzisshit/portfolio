@@ -10,19 +10,11 @@ const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
 
 const projects = [
   {
-    title: "Setu AI (सेतु)",
-    subtitle: "AI Health Copilot • Multimodal OCR & ABDM FHIR R4",
-    tags: ["Next.js 14", "TypeScript", "Supabase", "Vision OCR", "ABDM / FHIR"],
-    image: `${basePath}/projects/project-stairway.jpg`,
-    year: "2024",
-    link: "https://team-bread.vercel.app",
-  },
-  {
     title: "Bharat Monitor",
     subtitle: "Geospatial Intelligence & Real-Time Telemetry Platform",
     tags: ["Rust", "Axum", "Tokio", "FastAPI", "Next.js", "WebSockets"],
     image: `${basePath}/projects/project-scanline.jpg`,
-    year: "2024",
+    year: "2026",
     link: "https://github.com/scholzisshit",
   },
   {
@@ -30,23 +22,7 @@ const projects = [
     subtitle: "Privacy-First AI Quant Interview Platform with Local LLM",
     tags: ["React", "FastAPI", "Ollama", "Python", "yfinance"],
     image: `${basePath}/projects/project-touch.jpg`,
-    year: "2024",
-    link: "https://github.com/scholzisshit",
-  },
-  {
-    title: "Clickbait-Peak",
-    subtitle: "CTR Prediction & Ad Click Behavioral Modeling",
-    tags: ["Python", "Logistic Regression", "EDA", "Scikit-learn"],
-    image: `${basePath}/projects/project-portal.jpg`,
-    year: "2024",
-    link: "https://github.com/scholzisshit/clickbait-peak",
-  },
-  {
-    title: "Delhi House Predictor",
-    subtitle: "ML Valuation with Quantitative Risk Analytics (VaR & CVaR)",
-    tags: ["Python", "XGBoost", "Scikit-learn", "Plotly", "Streamlit"],
-    image: `${basePath}/projects/project-icarus.jpg`,
-    year: "2024",
+    year: "2026",
     link: "https://github.com/scholzisshit",
   },
   {
@@ -54,8 +30,32 @@ const projects = [
     subtitle: "Autonomous Multi-Agent Software Engineering Coordination Lab",
     tags: ["CrewAI", "Gemini", "Groq", "Multi-Agent", "Python"],
     image: `${basePath}/projects/project-knight.jpg`,
-    year: "2024",
+    year: "2026",
     link: "https://github.com/scholzisshit/agentic-ai-engineering-lab",
+  },
+  {
+    title: "Delhi House Predictor",
+    subtitle: "ML Valuation with Quantitative Risk Analytics (VaR & CVaR)",
+    tags: ["Python", "XGBoost", "Scikit-learn", "Plotly", "Streamlit"],
+    image: `${basePath}/projects/project-icarus.jpg`,
+    year: "2025",
+    link: "https://github.com/scholzisshit",
+  },
+  {
+    title: "Clickbait-Peak",
+    subtitle: "CTR Prediction & Ad Click Behavioral Modeling",
+    tags: ["Python", "Logistic Regression", "EDA", "Scikit-learn"],
+    image: `${basePath}/projects/project-portal.jpg`,
+    year: "2025",
+    link: "https://github.com/scholzisshit/clickbait-peak",
+  },
+  {
+    title: "Setu AI (सेतु)",
+    subtitle: "Healthcare Analytics & AI Copilot • Multimodal OCR & FHIR",
+    tags: ["Next.js 14", "TypeScript", "Supabase", "Vision OCR", "ABDM / FHIR"],
+    image: `${basePath}/projects/project-stairway.jpg`,
+    year: "2024",
+    link: "https://team-bread.vercel.app",
   },
 ]
 
