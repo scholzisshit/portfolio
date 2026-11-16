@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { About } from "@/components/about"
+import { AboutEducation } from "@/components/about-education"
 import { Works } from "@/components/works"
 import { TechMarquee } from "@/components/tech-marquee"
 import { Footer } from "@/components/footer"
@@ -17,6 +18,7 @@ export default function Home() {
         <Hero />
         <SectionBlend />
         <About />
+        <AboutEducation />
         <Works />
         <TechMarquee />
         <Footer />
