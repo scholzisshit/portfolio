@@ -19,6 +19,31 @@ type Certificate = {
   verifyUrl?: string
 }
 
+const BOTANICAL_ASCII = `                      ┌─── [0637] ───┐
+               . ·  : ░ ▒ ▓ █ █ ▓ ▒ ░ :  · .
+            · : ░ ▒ ▓ █ █ █ █ █ █ █ █ ▓ ▒ ░ : ·      ┌─ [FORM IN BLOOM] ─┐
+         . + ▒ ▓ █ █ █ ▓ ▒ ░ · ░ ▒ ▓ █ █ █ ▓ ▒ + .   │ DELICATE,         │
+       · ░ ▓ █ █ ▓ ▒ ░           ░ ▒ ▓ █ █ ▓ ░ ·     │ BUT INTENTIONAL   │
+     : ▒ █ █ ▓ ░       ░ ▒ ▓ ▒ ░       ░ ▓ █ █ ▒ :   └───────────────────┘
+   + ▓ █ ▓ ░       ░ ▓ █ █ █ █ █ ▓ ░       ░ ▓ █ ▓ +
+ . ▒ █ ▓ ·      ▒ █ █ █ █ ▓ █ █ █ █ ▒      · ▓ █ ▒ .   + [TEXTURE STUDY]
+ : ▓ █ ░      ▓ █ █ ▓ ▒ ░ · · ░ ▒ ▓ █ █ ▓      ░ █ ▓ : ░ 25% HALTON
+ ▒ █ ▓       █ █ ▓ ·   + [0637] +   · ▓ █ █       ▓ █ ▒ ▒ 50% SHADOW
+ ▓ █ ▒      ▓ █ ▒    FORM IN BLOOM    ▒ █ ▓      ▒ █ ▓ ▓ 75% DITHER
+ █ █ ░     ░ █ ▓   NON-LIVING BEHIND   ▓ █ ░     ░ █ █ █ 100% LATENT
+ █ █ ·     · █ ▓         LIFE          ▓ █ ·     · █ █
+ ▓ █ ▒      ▓ █ ▒    + [1007] +       ▒ █ ▓      ▒ █ ▓ ┌─ [VERIFIED] ──────┐
+ ▒ █ ▓       █ █ ▓ ·       · ▓ █ █       ▓ █ ▒ │ 12 ISSUED BADGES│
+ : ▓ █ ░      ▓ █ █ ▓ ▒ ░ ▒ ▓ █ █ ▓      ░ █ ▓ : └───────────────────┘
+ . ▒ █ ▓ ·      ▒ █ █ █ █ █ █ █ █ ▒      · ▓ █ ▒ .
+   + ▓ █ ▓ ░       ░ ▓ █ █ █ ▓ ░       ░ ▓ █ ▓ +
+     : ▒ █ █ ▓ ░                   ░ ▓ █ █ ▒ :
+       · ░ ▓ █ █ ▓ ▒ ░ .   . ░ ▒ ▓ █ █ ▓ ░ ·
+         . + ▒ ▓ █ █ █ ▓ ▒ ▓ █ █ █ ▓ ▒ + .
+            · : ░ ▒ ▓ █ █ █ █ █ ▓ ▒ ░ : ·
+               . ·  : ░ ▒ ▓ █ █ ▓ ▒ ░ :  · .
+                      └─── [1032] ───┘`
+
 const certificates: Certificate[] = [
   {
     title: "Microsoft Certified: Azure AI Fundamentals",
@@ -168,21 +193,62 @@ export default function CertificationsPage() {
 
       {/* Hero Header */}
       <section className="px-6 sm:px-8 md:px-12 pt-16 pb-12 max-w-7xl mx-auto">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-        >
-          <p className="font-mono text-[10px] sm:text-xs tracking-[0.3em] text-muted-foreground mb-4">
-            07 — PROOF OF WORK &amp; VALIDATION
-          </p>
-          <h1 className="font-sans text-4xl sm:text-6xl md:text-7xl font-light tracking-tight mb-6">
-            Certifications &amp; <span className="italic text-white/70">Honors</span>
-          </h1>
-          <p className="font-mono text-xs sm:text-sm text-muted-foreground max-w-2xl leading-relaxed">
-            Verified credentials in Microsoft Azure Cloud &amp; AI, machine learning engineering internships, national hackathon builds, and academic honors. Click any certificate to inspect full resolution.
-          </p>
-        </motion.div>
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="lg:col-span-7 flex flex-col justify-between"
+          >
+            <div>
+              <p className="font-mono text-[10px] sm:text-xs tracking-[0.3em] text-muted-foreground mb-4">
+                07 — PROOF OF WORK &amp; VALIDATION
+              </p>
+              <h1 className="font-sans text-4xl sm:text-6xl md:text-7xl font-light tracking-tight mb-6">
+                Certifications &amp; <span className="italic text-white/70">Honors</span>
+              </h1>
+              <p className="font-mono text-xs sm:text-sm text-muted-foreground max-w-xl leading-relaxed mb-6">
+                Verified credentials in Microsoft Azure Cloud &amp; AI, machine learning engineering internships, national hackathon builds, and academic honors. Click any certificate to inspect full resolution.
+              </p>
+            </div>
+
+            {/* Brutalist Tag Indicators */}
+            <div className="flex flex-wrap gap-2 text-[10px] sm:text-xs font-mono tracking-wider text-[#60a5fa] border border-[#60a5fa]/30 bg-[#60a5fa]/5 px-3 py-2 rounded-sm w-fit mt-2">
+              <span className="text-white/60">[0637]</span>
+              <span>// DELICATE, BUT INTENTIONAL</span>
+              <span className="text-white/30">•</span>
+              <span>12 VERIFIED CREDENTIALS</span>
+            </div>
+          </motion.div>
+
+          {/* ASCII Botanical Dither Art Panel */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="lg:col-span-5 border border-white/10 bg-white/[0.02] p-4 sm:p-5 rounded-sm relative overflow-hidden group hover:border-[#60a5fa]/40 transition-colors duration-500"
+          >
+            {/* Corner Crosshairs */}
+            <div className="absolute top-2 left-2 font-mono text-[10px] text-white/30 select-none">+</div>
+            <div className="absolute top-2 right-2 font-mono text-[10px] text-white/30 select-none">+</div>
+            <div className="absolute bottom-2 left-2 font-mono text-[10px] text-white/30 select-none">+</div>
+            <div className="absolute bottom-2 right-2 font-mono text-[10px] text-white/30 select-none">+</div>
+
+            <div className="flex items-center justify-between font-mono text-[9px] sm:text-[10px] text-white/40 tracking-widest border-b border-white/10 pb-2 mb-3">
+              <span>LATENT DITHER // BOTANICAL STUDY</span>
+              <span className="text-[#60a5fa]">[1007]</span>
+            </div>
+
+            <pre className="font-mono text-[7px] sm:text-[8.5px] md:text-[9.5px] leading-[1.08] text-[#93c5fd] select-none overflow-x-auto whitespace-pre">
+              {BOTANICAL_ASCII}
+            </pre>
+
+            <div className="flex items-center justify-between font-mono text-[9px] text-white/40 tracking-wider pt-2 mt-2 border-t border-white/10">
+              <span>FORM IN BLOOM</span>
+              <span>NON-LIVING BEHIND LIFE</span>
+            </div>
+          </motion.div>
+        </div>
 
         {/* Filter Pills */}
         <motion.div
