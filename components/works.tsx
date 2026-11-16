@@ -5,29 +5,31 @@ import type React from "react"
 import { useState, useRef } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 const projects = [
   {
     title: "Bharat Monitor",
     tags: ["Rust", "Axum", "FastAPI", "Next.js", "WebSockets"],
-    image: "/abstract-neural-network-visualization-dark-theme.jpg",
+    image: `${basePath}/abstract-neural-network-visualization-dark-theme.jpg`,
     year: "2024",
   },
   {
     title: "QuantFrame Pro",
     tags: ["React", "FastAPI", "Ollama", "Python", "yfinance"],
-    image: "/futuristic-data-dashboard-dark-minimal.jpg",
+    image: `${basePath}/futuristic-data-dashboard-dark-minimal.jpg`,
     year: "2024",
   },
   {
     title: "Delhi House Predictor",
     tags: ["Python", "XGBoost", "Scikit-learn", "Streamlit"],
-    image: "/abstract-memory-storage-visualization.jpg",
+    image: `${basePath}/abstract-memory-storage-visualization.jpg`,
     year: "2024",
   },
   {
     title: "Healthcare Analytics",
     tags: ["Python", "SQL", "Machine Learning", "Pandas"],
-    image: "/sound-wave-visualization-dark-theme.jpg",
+    image: `${basePath}/sound-wave-visualization-dark-theme.jpg`,
     year: "2023",
   },
 ]

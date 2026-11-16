@@ -20,6 +20,8 @@ const education = [
   },
 ]
 
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
+
 export function AboutEducation() {
   return (
     <section id="about-me" className="relative py-24 px-8 md:px-12">
@@ -36,7 +38,7 @@ export function AboutEducation() {
           >
             <div className="relative w-full aspect-square max-w-sm mx-auto md:mx-0 overflow-hidden rounded-sm">
               <Image
-                src="/nitish.jpg"
+                src={`${basePath}/nitish.jpg`}
                 alt="Nitish Sehgal"
                 fill
                 className="object-cover grayscale hover:grayscale-0 transition-all duration-700"
