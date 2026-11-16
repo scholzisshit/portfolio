@@ -4,33 +4,50 @@ import type React from "react"
 
 import { useState, useRef } from "react"
 import { motion, useMotionValue, useSpring } from "framer-motion"
+import { ArrowUpRight } from "lucide-react"
 
 const basePath = process.env.NEXT_PUBLIC_BASE_PATH || ""
 
 const projects = [
   {
-    title: "Bharat Monitor",
-    tags: ["Rust", "Axum", "FastAPI", "Next.js", "WebSockets"],
+    title: "Setu AI (सेतु)",
+    subtitle: "AI Health Copilot • Multimodal OCR & ABDM FHIR R4",
+    tags: ["Next.js 14", "TypeScript", "Supabase", "Vision OCR", "ABDM / FHIR"],
     image: `${basePath}/abstract-neural-network-visualization-dark-theme.jpg`,
     year: "2024",
+    link: "https://team-bread.vercel.app",
+  },
+  {
+    title: "Bharat Monitor",
+    subtitle: "Geospatial Intelligence & Real-Time Telemetry Platform",
+    tags: ["Rust", "Axum", "Tokio", "FastAPI", "Next.js", "WebSockets"],
+    image: `${basePath}/futuristic-data-dashboard-dark-minimal.jpg`,
+    year: "2024",
+    link: "https://github.com/scholzisshit",
   },
   {
     title: "QuantFrame Pro",
+    subtitle: "Privacy-First AI Quant Interview Platform with Local LLM",
     tags: ["React", "FastAPI", "Ollama", "Python", "yfinance"],
-    image: `${basePath}/futuristic-data-dashboard-dark-minimal.jpg`,
+    image: `${basePath}/abstract-memory-storage-visualization.jpg`,
     year: "2024",
+    link: "https://github.com/scholzisshit",
+  },
+  {
+    title: "Clickbait-Peak",
+    subtitle: "CTR Prediction & Ad Click Behavioral Modeling",
+    tags: ["Python", "Logistic Regression", "EDA", "Scikit-learn"],
+    image: `${basePath}/sound-wave-visualization-dark-theme.jpg`,
+    year: "2024",
+    link: "https://github.com/scholzisshit/clickbait-peak",
   },
   {
     title: "Delhi House Predictor",
-    tags: ["Python", "XGBoost", "Scikit-learn", "Streamlit"],
-    image: `${basePath}/abstract-memory-storage-visualization.jpg`,
+    subtitle: "ML Valuation with Quantitative Risk Analytics (VaR & CVaR)",
+    tags: ["Python", "XGBoost", "Scikit-learn", "Plotly", "Streamlit"],
+    image: `${basePath}/futuristic-data-dashboard-dark-minimal.jpg`,
     year: "2024",
-  },
-  {
-    title: "Healthcare Analytics",
-    tags: ["Python", "SQL", "Machine Learning", "Pandas"],
-    image: `${basePath}/sound-wave-visualization-dark-theme.jpg`,
-    year: "2023",
+    link: "https://github.com/scholzisshit",
   },
 ]
 
@@ -75,42 +92,53 @@ export function Works() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: index * 0.1 }}
-            className="relative border-t border-white/10 py-6 sm:py-8 md:py-12"
+            className="relative border-t border-white/10 py-6 sm:py-8 md:py-10"
             onMouseEnter={() => setHoveredIndex(index)}
             onMouseLeave={() => setHoveredIndex(null)}
           >
-            <div
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
               data-cursor-hover
-              className="group flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4"
+              className="group flex flex-col md:flex-row md:items-center justify-between gap-3 sm:gap-4 block"
             >
               {/* Year */}
               <span className="font-mono text-[11px] sm:text-xs text-muted-foreground tracking-widest order-1 md:order-none">
                 {project.year}
               </span>
 
-              {/* Title */}
-              <motion.h3
-                className="font-sans text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-light tracking-tight group-hover:text-white/70 transition-colors duration-300 flex-1"
-                animate={{
-                  x: hoveredIndex === index ? 12 : 0,
-                }}
-                transition={{ type: "spring", stiffness: 300, damping: 20 }}
-              >
-                {project.title}
-              </motion.h3>
+              {/* Title & Subtitle */}
+              <div className="flex-1 order-2 md:order-none">
+                <div className="flex items-center gap-3">
+                  <motion.h3
+                    className="font-sans text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-light tracking-tight group-hover:text-white/70 transition-colors duration-300"
+                    animate={{
+                      x: hoveredIndex === index ? 12 : 0,
+                    }}
+                    transition={{ type: "spring", stiffness: 300, damping: 20 }}
+                  >
+                    {project.title}
+                  </motion.h3>
+                  <ArrowUpRight className="w-4 h-4 sm:w-5 sm:h-5 text-muted-foreground/50 group-hover:text-white group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
+                </div>
+                <p className="font-mono text-[11px] sm:text-xs text-muted-foreground/80 mt-1 tracking-wide">
+                  {project.subtitle}
+                </p>
+              </div>
 
               {/* Tags */}
-              <div className="flex gap-1.5 sm:gap-2 flex-wrap order-2 md:order-none">
+              <div className="flex gap-1.5 sm:gap-2 flex-wrap order-3 md:order-none">
                 {project.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="font-mono text-[9px] sm:text-[10px] tracking-wider px-2.5 py-1 border border-white/20 rounded-full text-muted-foreground"
+                    className="font-mono text-[9px] sm:text-[10px] tracking-wider px-2.5 py-1 border border-white/20 rounded-full text-muted-foreground group-hover:border-white/40 transition-colors duration-300"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-            </div>
+            </a>
           </motion.div>
         ))}
 
